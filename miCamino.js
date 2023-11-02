@@ -227,7 +227,7 @@ let phrase = '' ;
 for(let i = 0; i < miCamino.subiendoAlEverest[0][0].campoBase[0].campoI.campoII.campoIII.campoIV.length; i++){
   let string = miCamino.subiendoAlEverest[0][0].campoBase[0].campoI.campoII.campoIII.campoIV[i]
   if (typeof string === 'string'){
-    phrase += '' + string;
+    phrase += string + ' ';
   }
 }
 console.log(phrase)
@@ -238,13 +238,13 @@ console.log(miCamino.subiendoAlEverest[0][0].campoBase[0].campoI.campoII.campoII
 
 //por ultimo como bonus,en un console.log mostraremos por pantalla las urls de todas las imagenes de los materiales y en otro haremos la media de la altitud de todas la cimas que hemos subido.
 
-for( img of miCamino.material){
-  for( url of img.imagenes){
-    if (url.imagen1 && url.imagen1.url){
-      console.log(url.imagen1.url)
-    }
-    if (url.imagen2 && url.imagen2.url){
-      console.log(url.imagen2.url)
+
+for (const img of miCamino.material) {
+  for (const url of img.imagenes) {
+    if (url.imagen1) {
+       console.log(url.imagen1.url);
+    } else {
+      console.log(url.imagen2.url);
     }
   }
 }
